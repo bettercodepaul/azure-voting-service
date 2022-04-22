@@ -18,6 +18,9 @@ jobs:
       run: |
         docker build --tag registry.heroku.com/voting-service-ess/voting-backend .
         docker push registry.heroku.com/voting-service-ess/voting-backend
+        docker pull mcr.microsoft.com/oss/bitnami/redis:6.0.8
+        docker tag mcr.microsoft.com/oss/bitnami/redis:6.0.8 registry.heroku.com/voting-service-ess/redis:6.0.8
+        docker push registry.heroku.com/voting-service-ess/redis:6.0.8
     - name: Release
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
