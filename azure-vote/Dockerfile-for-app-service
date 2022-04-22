@@ -15,7 +15,7 @@ EXPOSE 2222 80
  
 ADD     /azure-vote /app
 
-# ENV PORT 80
+ENV PORT ${PORT}
 ENV PATH ${PATH}:/home/site/wwwroot
 
 # Supervisor will call into /opt/startup/init_container.sh
