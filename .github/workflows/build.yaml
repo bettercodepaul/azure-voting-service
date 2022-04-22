@@ -24,4 +24,4 @@ jobs:
     - name: Release
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:release voting-backend --app voting-service-ess
+      run: heroku container:release voting-backend redis --app voting-service-ess
